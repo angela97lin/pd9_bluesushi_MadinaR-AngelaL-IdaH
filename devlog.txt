@@ -1,2 +1,5 @@
 BlueSushi's DevLog:
 
+Wednesday, May 28, 2014
+We introduced our idea and how to play BS to Ida, our new team member. We reviewed our proposal and thought about where to start tackling the game. Although we had previously wanted to implement a way for two separate human users to play, we realized, after discussing the issue with classmates and the internet, that it might be too time-consuming and too difficult. :(
+We also resent Mr. Brown the proposal email/resubmitted the google doc form/updated the GitHub repo's name to reflect the addition to our team :)
