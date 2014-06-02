@@ -44,3 +44,4 @@ Added a little more to our current files. Beginning to mess with GUI since we de
 Monday June 2nd. 2014
 Added the Deck class. This class creates a shuffled deck ready to use! Also added a few testers/methods in other classes. Staying away from GUI for as long as possible, aha.
 -AL
+We had a little trouble trying to set the background of our GUI window to our desired color. This is because we first attempted to just "setBackground(Color.YELLOW), which produced nothing. After some research (aka Googling), we realized that we had to call the ContentPane. Hence, we had to do getContentPane.setBackground(Color.YELLOW). YAY!
