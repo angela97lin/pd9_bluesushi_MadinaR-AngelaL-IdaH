@@ -40,3 +40,7 @@ Looked into possiblity of some better ways to diagram our classes. Remembered th
 Sunday, June 1st, 2014
 Added a little more to our current files. Beginning to mess with GUI since we decided it was better to do the GUI concurrently but GUI seems to be a challenge. Currently, I can only produce a nice gray screen with an accurate title. I was able to (re)learn how to read from a text file. Hooray!
 -AL
+
+Monday June 2nd. 2014
+Added the Deck class. This class creates a shuffled deck ready to use! Also added a few testers/methods in other classes. Staying away from GUI for as long as possible, aha.
+-AL
