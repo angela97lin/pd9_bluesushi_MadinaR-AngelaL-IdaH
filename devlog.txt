@@ -33,6 +33,10 @@ Friday, May 29th, 2014
 In class, we worked on one computer and coded the basics of the basics. We constructed a basic Card class, Hand class, Computer class, and Driver class. More importantly, we continued to discuss the algorithms behind our project.
 -AL
 
+Saturday, May 32st, 2014
+Looked into possiblity of some better ways to diagram our classes. Remembered that I used a web diagramming website called MindMeister for a freshman year global history project. Created an account on MindMeister and transferred what we had on paper to the web. Sent this to the other members- tentative as to whether we will continue using it. 
+-IH
+
 Sunday, June 1st, 2014
 Added a little more to our current files. Beginning to mess with GUI since we decided it was better to do the GUI concurrently but GUI seems to be a challenge. Currently, I can only produce a nice gray screen with an accurate title. I was able to (re)learn how to read from a text file. Hooray!
 -AL
