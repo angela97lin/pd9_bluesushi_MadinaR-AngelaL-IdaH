@@ -19,6 +19,8 @@ public class Driver extends JFrame{
    	//Panel p = new Panel(this);
 	//add(p);
 	setVisible(true);
+	Music m = new Music();
+	m.play();
     }
 
 
@@ -27,6 +29,7 @@ public class Driver extends JFrame{
 
     public static void main(String[] args){
 	Driver d = new Driver();
+
     }
 
 
