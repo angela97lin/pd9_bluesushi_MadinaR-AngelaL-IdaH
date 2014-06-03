@@ -48,3 +48,10 @@ We had a little trouble trying to set the background of our GUI window to our de
 -AL
 At home, I was assigned the task of adding music to our GUI. Surprisingly, I had some difficulties trying to implement the music. This is, I later found out, because I attempted to use a .mp3 file when only .wav files are acceptable. I also attempted to make the music run continuously, but after looking up some code that failed to produce results, decided that it was best to first make a Music.java file and then later implement it in a looping function (ex:paint function used to draw the GUI). Still unsure about song choice as well, haha.
 -AL
+
+In order to maximize efficiency, we'll be building different parts of the Driver separately. After we finish building all of the key parts, we
+will combine everything. 
+Currently, we are having trouble with implementing ActionListener. Although the ActionListener is working fine, the sequence of actions it
+is supposed to trigger is not working. (In the Setting class, a button is supposed to lead on to a screen where the player is able to choose
+different characters. However, even after the player repeatedly clicks on the button, no such action occurs.)
+-MR
