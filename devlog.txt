@@ -44,16 +44,17 @@ Added a little more to our current files. Beginning to mess with GUI since we de
 Monday June 2nd. 2014
 Added the Deck class. This class creates a shuffled deck ready to use! Also added a few testers/methods in other classes. Staying away from GUI for as long as possible, aha.
 -AL
-We had a little trouble trying to set the background of our GUI window to our desired color. This is because we first attempted to just "setBackground(Color.YELLOW), which produced nothing. After some research (aka Googling), we realized that we had to call the ContentPane. Hence, we had to do getContentPane.setBackground(Color.YELLOW). YAY!
+In class, we had a little trouble trying to set the background of our GUI window to our desired color. This is because we first attempted to just "setBackground(Color.YELLOW), which produced nothing. After some research (aka Googling), we realized that we had to call the ContentPane. Hence, we had to do getContentPane.setBackground(Color.YELLOW). YAY!
 -AL
 At home, I was assigned the task of adding music to our GUI. Surprisingly, I had some difficulties trying to implement the music. This is, I later found out, because I attempted to use a .mp3 file when only .wav files are acceptable. I also attempted to make the music run continuously, but after looking up some code that failed to produce results, decided that it was best to first make a Music.java file and then later implement it in a looping function (ex:paint function used to draw the GUI). Still unsure about song choice as well, haha.
 -AL
 
-In order to maximize efficiency, we'll be building different parts of the Driver separately. After we finish building all of the key parts, we
-will combine everything. 
-Currently, we are having trouble with implementing ActionListener. Although the ActionListener is working fine, the sequence of actions it
-is supposed to trigger is not working. (In the Setting class, a button is supposed to lead on to a screen where the player is able to choose
-different characters. However, even after the player repeatedly clicks on the button, no such action occurs.)
+I was assigned to work on the Setting class which would later be joined together with the GUI driver class. I created a "Setting" button and was able to find a picture of a character. I attemped to use ActionListener so that the button had a function when you clicked it, but I was unsuccesful as nothing changed after clicking the Setting button... :(
+-IH
+
+Tuesday June 3rd. 2014
+In order to maximize efficiency, we'll be building different parts of the Driver separately. After we finish building all of the key parts, we will combine everything. 
+Currently, we are having trouble with implementing ActionListener. Although the ActionListener is working fine, the sequence of actions it is supposed to trigger is not working. (In the Setting class, a button is supposed to lead on to a screen where the player is able to choose different characters. However, even after the player repeatedly clicks on the button, no such action occurs.)
 -MR
 
 In order to begin shaping the AI for this game, I created the appropriate methods in the Computer, Hand and Card classes.
@@ -62,3 +63,6 @@ Before working on the AI, I was trying to implement an animation of the dealing 
 it didn't work out as planned, so I scapped my code. I plan to get back to this after all of the back-end work is complete
 and after we have a stable & usable GUI as I feel the animation is something that is fun & nice, but not *necessary*
 for the game. -MR
+
+Today I continued to work on figuring out what went wrong last night in the Setting class. Ideally, after clicking the setting button the setting button should dissapear and the user should see a new set of instructions with images of different characters that he/she can choose from. I was able to successfully get rid of the setting button once it was clicked. From researching for a while, I finally figured out how to add an image. woooo! I was able to create it as an ImageIcon and then add it to a panel as a label. However, I soon realized that there must be additional functionality besides just having a bunch of images for characters. So I then created the images as buttons. The user clicks the character button and based on which button was clicked (ActionListener), we will know which image will be present during the game.
+-IH
