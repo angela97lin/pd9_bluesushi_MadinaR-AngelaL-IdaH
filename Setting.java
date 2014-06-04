@@ -1,3 +1,6 @@
+// For the images of characters
+
+import javax.swing.*;
 import java.awt.*;
 import javax.imageio.*;
 import java.util.*;
@@ -8,39 +11,84 @@ import java.awt.event.*;
 // This subclass inherits all properties from Frame, e.g., title, icon, buttons, content-pane
 public class Setting extends JFrame {
     
+    //INSTANCE VARIABLES
+    private JPanel panel;
+    private ImageIcon image;
+    private JButton setButton;
+    private JButton girl;
+    private JButton elmo;
+    private GridBagConstraints c;
     
     //Constructor to setup the GUI components
     public Setting(){
-	setLayout(new FlowLayout());
+	//setLayout(new FlowLayout()); //left to right
+
 	setSize(500,500);
-	setDefaultCloseOperation(EXIT_ON_CLOSE);	   
+	setDefaultCloseOperation(EXIT_ON_CLOSE); //so you can close when you press X	   
 	setVisible(true);
 	   
-	JPanel panel = new JPanel();
+	panel = new JPanel(new GridBagLayout());
 	getContentPane().add(panel);
-	  
 	
+
+	c = new GridBagConstraints();
+
 	//declare + instantiate a JButton instance called
-	JButton setButton = new JButton("Setting"); 	   
-	
+	setButton = new JButton("Settings"); 	   
+	setButton.setPreferredSize(new Dimension(100,25));
+      	panel.add(setButton); //add the button to the panel
+
+	// image = new ImageIcon(getClass().getResource("girl.jpg"));
+	// JLabel we = new JLabel(image);
+	// panel.add(we);
+
 	//event handling: source object(button), event object, listener object
-	setButton.addActionListener(new ActionListener(){
-		public void actionPerformed(ActionEvent e)
+	setButton.addActionListener ( new ActionListener(){
+		public void actionPerformed ( ActionEvent e )
 		{
-		    JLabel label1 = new JLabel("CHOOSE YOUR CHARACTER");
-		    ImageIcon char1 = new ImageIcon(getClass().getResource("girl.jpg"));
-		    JLabel label2 = new JLabel(char1);	 
-		    add(label2);
-		       
+		    setButton.setVisible(false);
+		    
+		    JLabel label = new JLabel( "Please choose your character" );
+		    label.setLocation(250, 10);
+
+		    //JPanel is where you can draw graphics and images
+		    panel.add( label );
+
+		    /* uncomment 3 lines below to show just an image
+		    image = new ImageIcon(getClass().getResource("girl.jpg"));
+		    JLabel mgirl = new JLabel(image);
+		    panel.add(mgirl);
+		    */
+		    
+		    //creating image buttons for user to select
+		    girl = new JButton();
+		    elmo = new JButton();
+		    c.gridx = 150;
+		    c.gridy = 50;
+		    girl.setIcon(new ImageIcon("girl.jpg"));
+		    panel.add( girl );
+		    //girl.setLocation(150, 30);
+		    //elmo.setLocation(300, 30);
+		    
+		    c.gridx = 300;
+		    c.gridy = 50;
+		    elmo.setIcon(new ImageIcon("elmo.jpg"));
+
+		    panel.add( elmo );
+		    
+		    
+		    
 		}
 	    });
 
-	setButton.setPreferredSize(new Dimension(100,25));
-	
-	panel.add(setButton);
-    }
+    }//end constructor 
 
-    //adding buttons
+    // public void paintComponent(Graphics g){
+    // 	super.paintComponent(g);
+    // 	image = new ImageIcon("girl.jpg");
+    // 	image.paintIcon(this, g, 100, 100);
+    // }
+    
     public static void main (String[] args){
 	new Setting();
     }
