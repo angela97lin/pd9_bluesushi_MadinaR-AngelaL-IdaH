@@ -55,3 +55,10 @@ Currently, we are having trouble with implementing ActionListener. Although the 
 is supposed to trigger is not working. (In the Setting class, a button is supposed to lead on to a screen where the player is able to choose
 different characters. However, even after the player repeatedly clicks on the button, no such action occurs.)
 -MR
+
+In order to begin shaping the AI for this game, I created the appropriate methods in the Computer, Hand and Card classes.
+Whenever necessary, I added new methods and adjusted some of the constructors.
+Before working on the AI, I was trying to implement an animation of the dealing of the computer deck in the GUI, but
+it didn't work out as planned, so I scapped my code. I plan to get back to this after all of the back-end work is complete
+and after we have a stable & usable GUI as I feel the animation is something that is fun & nice, but not *necessary*
+for the game. -MR
