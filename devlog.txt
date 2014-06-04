@@ -33,6 +33,25 @@ Friday, May 29th, 2014
 In class, we worked on one computer and coded the basics of the basics. We constructed a basic Card class, Hand class, Computer class, and Driver class. More importantly, we continued to discuss the algorithms behind our project.
 -AL
 
+Saturday, May 32st, 2014
+Looked into possiblity of some better ways to diagram our classes. Remembered that I used a web diagramming website called MindMeister for a freshman year global history project. Created an account on MindMeister and transferred what we had on paper to the web. Sent this to the other members- tentative as to whether we will continue using it. 
+-IH
+
 Sunday, June 1st, 2014
 Added a little more to our current files. Beginning to mess with GUI since we decided it was better to do the GUI concurrently but GUI seems to be a challenge. Currently, I can only produce a nice gray screen with an accurate title. I was able to (re)learn how to read from a text file. Hooray!
 -AL
+
+Monday June 2nd. 2014
+Added the Deck class. This class creates a shuffled deck ready to use! Also added a few testers/methods in other classes. Staying away from GUI for as long as possible, aha.
+-AL
+We had a little trouble trying to set the background of our GUI window to our desired color. This is because we first attempted to just "setBackground(Color.YELLOW), which produced nothing. After some research (aka Googling), we realized that we had to call the ContentPane. Hence, we had to do getContentPane.setBackground(Color.YELLOW). YAY!
+-AL
+At home, I was assigned the task of adding music to our GUI. Surprisingly, I had some difficulties trying to implement the music. This is, I later found out, because I attempted to use a .mp3 file when only .wav files are acceptable. I also attempted to make the music run continuously, but after looking up some code that failed to produce results, decided that it was best to first make a Music.java file and then later implement it in a looping function (ex:paint function used to draw the GUI). Still unsure about song choice as well, haha.
+-AL
+
+In order to maximize efficiency, we'll be building different parts of the Driver separately. After we finish building all of the key parts, we
+will combine everything. 
+Currently, we are having trouble with implementing ActionListener. Although the ActionListener is working fine, the sequence of actions it
+is supposed to trigger is not working. (In the Setting class, a button is supposed to lead on to a screen where the player is able to choose
+different characters. However, even after the player repeatedly clicks on the button, no such action occurs.)
+-MR

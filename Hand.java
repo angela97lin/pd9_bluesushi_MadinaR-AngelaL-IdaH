@@ -3,12 +3,9 @@
   Will use ArrayList as back-end structure.
  */
 
-<<<<<<< HEAD
-=======
 import java.util.*;
 import java.io.*;
 
->>>>>>> FETCH_HEAD
 public class Hand {
 
     private ArrayList<Card> hand = new ArrayList<Card>();
@@ -20,15 +17,11 @@ public class Hand {
     public ArrayList<Card> showHand() {
 	return hand;
     }
-    
-<<<<<<< HEAD
-    public void sort() {
-	
+    public int size(){
+	return hand.size();
     }
-}
-=======
+   
     //will implement a sort of our choosing to sort the cards :)
     public void sort() {
     }
 }
->>>>>>> FETCH_HEAD

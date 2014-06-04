@@ -1,15 +1,11 @@
-<<<<<<< HEAD
-public class Card {
-    
-    private int intValue;
-    private String suit; 
-    //private String faceValue;
-
-    public Card(int x, String s) {
-=======
+import javax.swing.*;
+import java.awt.*;
+import javax.imageio.*;
+import java.util.*;
+import java.io.*;
 
 
-public class Card {
+public class Card extends Rectangle{
     
     private int intValue; //contains numerical value of card (J = 11, Q = 12, A = 1, 2 = 2, etc.)
     private String suit; //contains the suit of the card (ex: Hearts, Clover, Diamond, Spade)
@@ -19,29 +15,12 @@ public class Card {
     //CONSTRUCTOR
     public Card(int x, String s) {
 	//if valid arguments
->>>>>>> FETCH_HEAD
 	if(x >= 1 && x <= 13)
 	    intValue = x;
 	if(s.equalsIgnoreCase("Clover") || s.equalsIgnoreCase("Hearts") ||
 	   s.equalsIgnoreCase("Spade") || s.equalsIgnoreCase("Diamond"))
 	    suit = s;
     }
-<<<<<<< HEAD
-    
-    public int getIntVal() {
-	return intValue;
-    }
-
-    public String getSuit() {
-	return suit;
-    }
-
-    public boolean equals(Card other) {
-	return other.getIntVal() == getIntVal();
-    }
-
-}
-=======
 
     //public accessor to intValue
     public int getIntVal() {
@@ -56,5 +35,14 @@ public class Card {
 	return (other.getIntVal() == getIntVal());
     }
 
+    public String toString(){
+	String retS = "";
+	retS = intValue + ", " + suit;
+	return retS;
+    }
+
+     public void draw(Graphics g){
+      }
+
+
 }
->>>>>>> FETCH_HEAD
