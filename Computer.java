@@ -12,6 +12,7 @@ public class Computer {
     public Computer(ArrayList<Cards> cards){
         cards.add(
         hand = new Hand(cards);
+    
     }
 
     
