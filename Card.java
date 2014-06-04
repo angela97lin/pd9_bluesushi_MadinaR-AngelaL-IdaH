@@ -14,35 +14,40 @@ public class Card extends Rectangle{
 
     //CONSTRUCTOR
     public Card(int x, String s) {
-	//if valid arguments
-	if(x >= 1 && x <= 13)
-	    intValue = x;
-	if(s.equalsIgnoreCase("Clover") || s.equalsIgnoreCase("Hearts") ||
-	   s.equalsIgnoreCase("Spade") || s.equalsIgnoreCase("Diamond"))
-	    suit = s;
+        //if valid arguments
+        if(x >= 1 && x <= 13)
+            intValue = x;
+        if(s.equalsIgnoreCase("Clover") || s.equalsIgnoreCase("Hearts") ||
+           s.equalsIgnoreCase("Spade") || s.equalsIgnoreCase("Diamond"))
+            suit = s;
     }
 
     //public accessor to intValue
     public int getIntVal() {
-	return intValue;
+        return intValue;
     }
     //public accessor to suit
     public String getSuit() {
-	return suit;
+        return suit;
     }
     //checks if two cards have equal numerical values
     public boolean equals(Card other) {
-	return (other.getIntVal() == getIntVal());
+        return (other.getIntVal() == getIntVal());
+    }
+    
+    //returns true only if suit + numerical values are equal
+    public boolean isSame(Card other) {
+        return (other.getIntVal() == getIntVal()) && (other.getSuit().equals(getSuit()));
     }
 
     public String toString(){
-	String retS = "";
-	retS = intValue + ", " + suit;
-	return retS;
+        String retS = "";
+        retS = intValue + ", " + suit;
+        return retS;
     }
 
-     public void draw(Graphics g){
-      }
+    public void draw(Graphics g){
+    }
 
 
 }
