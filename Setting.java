@@ -65,7 +65,7 @@ public class Setting extends JFrame {
 		    elmo = new JButton();
 		    c.gridx = 150;
 		    c.gridy = 50;
-		    girl.setIcon(new ImageIcon("girl.jpg"));
+		    girl.setIcon(new ImageIcon("girl.JPG"));
 		    panel.add( girl );
 		    //girl.setLocation(150, 30);
 		    //elmo.setLocation(300, 30);
@@ -74,12 +74,33 @@ public class Setting extends JFrame {
 		    c.gridy = 50;
 		    elmo.setIcon(new ImageIcon("elmo.jpg"));
 
-		    panel.add( elmo );
-		    
-		    
+		    panel.add( elmo );		    
 		    
 		}
 	    });
+
+
+	// if you click girl then your image is a girl
+	girl.addActionListener (new ActionListener(){
+		public void actionPerformed ( ActionEvent e )
+		{
+		    // image = new ImageIcon(getClass().getResource("girl.JPG"));
+		    // JLabel we = new JLabel(image);
+		    
+		}
+	    });
+
+
+	// if you click elmo then your image is a elmo
+	elmo.addActionListener (new ActionListener(){
+		public void actionPerformed ( ActionEvent e )
+		{
+		    // image = new ImageIcon(getClass().getResource("elmo.jpg"));
+		    // JLabel we = new JLabel(image);
+		    
+		}
+	    });
+
 
     }//end constructor 
 

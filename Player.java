@@ -10,10 +10,11 @@ public class Player {
 
     //CONSTRUCTOR: instantiate player with a hand
     public Player(ArrayList<Card> cards){
-	myHand = new Hand(cards);
+	myHand = new Hand(cards); // gets it from the Driver class
     }
 
-    //ACCESOR METHOD
+
+    //ACCESSOR METHOD
     public Hand getHand(){
 	return myHand;
     }
