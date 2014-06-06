@@ -1,7 +1,6 @@
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 import javax.imageio.*;
 import java.util.*;
 import java.io.*;
@@ -18,21 +17,22 @@ public class Driver extends JFrame{
 	setLocationRelativeTo(null);//centers screen
 	setResizable(false);
 	setLayout(new GridLayout(1,1,0,0));
-	//Panel p = new Panel(this);
+	getContentPane().setBackground(Color.GREEN);
+   	//Panel p = new Panel(this);
 	//add(p);
 	setVisible(true);
-	getContentPane().setBackground(Color.GREEN);
-		Music m = new Music();
+	Music m = new Music();
 	m.play();
     }
 
 
+
+
+
     public static void main(String[] args){
 	Driver d = new Driver();
+
     }
-
-
-
 
 
 
