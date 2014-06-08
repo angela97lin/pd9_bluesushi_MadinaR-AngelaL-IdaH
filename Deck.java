@@ -42,7 +42,7 @@ public class Deck {
     }
 
     public Card drawFromDeck(){
-	return deck.remove(0);
+	return deck.remove(deck.size()-1);
     }
 
     public int getSize(){
