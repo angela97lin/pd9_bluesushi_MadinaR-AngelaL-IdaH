@@ -19,7 +19,8 @@ public class Card extends Component{
     private String suit; //contains the suit of the card (ex: Hearts, Clover, Diamond, Spade)
     // private String faceValue; // 2-10, J, Q, K, A
     BufferedImage img;
-    
+    private boolean faceup;
+
     //CONSTRUCTOR - sets the intValue and suit
     public Card(int x, String s) {
         //if valid arguments
@@ -28,14 +29,29 @@ public class Card extends Component{
         if(s.equalsIgnoreCase("Clover") || s.equalsIgnoreCase("Hearts") ||
            s.equalsIgnoreCase("Spade") || s.equalsIgnoreCase("Diamond"))
             suit = s;
+	faceup = false; // initially they are all face down
 
-	//image
-	String filename = intValue + s.substring(0,1).toLowerCase() + ".gif";
-	try {
-	    img = ImageIO.read(new File(filename));
-	}
-	catch (IOException e){
-	}
+	/*****************************************************
+	Note: the code below displays the image of the card but only when it the gif file is in the same file
+        Still need to work on:
+        display face down card or face up card
+        if (faceup == false) {display face down card }
+	should display face down card when...
+        1. Part of deck (if we are showing the deck)
+        2. Computer's cards
+        3. After we have selected our card and moved it to middle (computer can't see it)
+	*****************************************************/
+
+	//	else {
+	    String filename = intValue + s.substring(0,1).toLowerCase() + ".gif";
+	    try {
+		img = ImageIO.read(new File(filename));
+	    }
+	    catch (IOException e){
+	    }
+	    //	}
+	
+	
     }
 
     //public accessor to intValue
