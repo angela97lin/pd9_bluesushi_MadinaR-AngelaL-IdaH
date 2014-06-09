@@ -61,7 +61,19 @@ public class Hand {
         return retCard;
     }
     
+    public void add(Card c){
+	hand.add(c);
+	sort();
+    }
     //will implement a sort of our choosing to sort the cards :)
     public void sort() {
+    }
+
+   public String toString(){
+	String retS = "(";
+	for (int i = 0; i<hand.size(); i++){
+	    retS = retS + " " + hand.get(i).toString()+"\n";
+	}
+	return retS;
     }
 }

@@ -34,7 +34,7 @@ public class Card extends Rectangle{
     public boolean equals(Card other) {
         return (other.getIntVal() == getIntVal());
     }
-    //wait. why do we need this again?
+    
     //returns true only if suit + numerical values are equal
     public boolean isSame(Card other) {
         return (other.getIntVal() == getIntVal()) && (other.getSuit().equals(getSuit()));

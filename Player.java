@@ -1,3 +1,5 @@
+import java.util.*;
+import java.io.*;
 /*=======================================
  Player Class
  -details what a player/user in this game 
@@ -14,8 +16,9 @@ public class Player {
     }
 
 
-    //ACCESSOR METHOD
+    //ACCESSOR METHOD to the player's hand
     public Hand getHand(){
 	return myHand;
     }
+
 }
