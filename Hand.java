@@ -48,16 +48,20 @@ public class Hand {
     }
 
     /*****************************************************
-     * boolean hadCard (int)
+     * int hasCard (int)
      * @param x -- checks if a card with any suit is present in the hand that 
      *             has an int value of x
+     * returns a number from 0 - 4
+     * 0 if no such card is present, and 4 if the player has 
+     * all cards with int value of x
      *****************************************************/
-    public boolean hasCard(int x) {
+    public int hasCard(int x) {
+        int count = 0;
         for(Card current : hand) {
             if (current.getIntVal() == x)
-                return true;
+                count++;
         }
-        return false;
+        return count;
     }
 
     
