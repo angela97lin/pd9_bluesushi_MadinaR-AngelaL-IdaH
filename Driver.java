@@ -7,11 +7,13 @@ import java.awt.event.*;
 import java.awt.image.*;
 
 public class Driver {
+    
     public static JFrame driver;
     public static Dimension size = new Dimension(1000,730);
     public Computer c;
     public Player p;
     public Deck deck;
+   
     public static String name = "BS";
     //Since we are only playing with one other player, the computer, we must split the deck into two halves
     //and only use one half for each game. Otherwise, the game would be too easy and almost pointless.
@@ -20,21 +22,21 @@ public class Driver {
     // public static ArrayList<Card> deck2 = new ArrayList<Card>();
     //Using stack as our pile in the middle of the table
     public static Stack<Card> pile;
+    
     public Driver(){
-	driver = new JFrame("Driver Frame");
-	driver.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	driver.setSize(size);
-	driver.setTitle(name);
-	driver.setLocationRelativeTo(null);//centers screen
-	driver.setResizable(false);
-	driver.setLayout(new GridLayout(1,1,0,0));
-	//may make more complex? using a image, perhaps?
-	driver.getContentPane().setBackground(Color.GREEN);
-	init();
-	driver.setVisible(true);
+        driver = new JFrame("Driver Frame");
+        driver.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        driver.setSize(size);
+        driver.setTitle(name);
+        driver.setLocationRelativeTo(null);//centers screen
+        driver.setResizable(false);
+        driver.setLayout(new GridLayout(1,1,0,0));
+        //may make more complex? using a image, perhaps?
+        driver.getContentPane().setBackground(Color.GREEN);
+        init();
+        driver.setVisible(true);
 
-      
-
+    
     }
 
     //initiates the game with music and a split deck--will be called in the constructor
