@@ -6,7 +6,15 @@ import java.io.*;
 import java.awt.event.*;
 import java.awt.image.*;
 
+
+/*****************************************************
+ * class Driver  ---  main class to run the game
+ * Implements stacking and queueing 
+ * Features GUI
+ *****************************************************/
 public class Driver {
+
+    //Instance Variable
     public static JFrame driver;
     public static Dimension size = new Dimension(1000,730);
     public Computer c;
@@ -20,6 +28,9 @@ public class Driver {
     // public static ArrayList<Card> deck2 = new ArrayList<Card>();
     //Using stack as our pile in the middle of the table
     public static Stack<Card> pile;
+    
+
+    //CONSTRUCTOR
     public Driver(){
 	driver = new JFrame("Driver Frame");
 	driver.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
