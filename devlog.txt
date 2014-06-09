@@ -98,3 +98,11 @@ relied on the first thing. I decided on just using a empty dummy ArrayList to fe
 and Computer class first, and then having deal() update these ArrayLists with the Player or the Card's actual hand. 
 
 -AL
+
+I'm trying to flesh out a viable AI that uses queues as we specified in our initial proposal. 
+As of now, I am almost done creating the Behavior class. As soon as I finish, I will implement it in the Computer class.
+I find that the hardest part is designing exactly how the different components will interact with one another, so
+I try to adjust multiple classes concurrently. I realize, however, that this approach is much more time consuming
+and has me error-checking every 2 minutes. I do hope that in the long run, the extra minutes spent will prevent any
+ugly and unnecessary errors. 
+-MR
