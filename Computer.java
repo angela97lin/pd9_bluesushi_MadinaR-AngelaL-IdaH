@@ -60,7 +60,14 @@ public class Computer {
         
         return retStr;
     }
-                  
+    
+    /*
+     The computer will decide whether to call  BS or not.
+     */
+    public boolean callBS() {
+        return false;
+    }
+    
     //public accessor to hand
     public Hand getHand() {
         return hand;
