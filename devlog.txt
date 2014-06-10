@@ -106,3 +106,7 @@ I try to adjust multiple classes concurrently. I realize, however, that this app
 and has me error-checking every 2 minutes. I do hope that in the long run, the extra minutes spent will prevent any
 ugly and unnecessary errors. 
 -MR
+
+I worked on giving gui characteristics to the Card class. Madina already found a bunch of gif images of the cards that make up the 52 cards of the deck. I have made it so that the image is loaded based on the integer value of the card and the suit which the card is from. This will directly choose the correct card from the folder. Also I realized that some cards will not be face up such as the pile and the computer's cards because those are cards that we cannot see. So we will need to find a face down card to add to that folder. Next I worked on trying to figure out how to incorporate heapsort in our hand class so that the hand is automagically sorted for the user and the computer. This will make it easier for the user and computer to search and find a particular card. I added ALHeap to this file so that we can use heap characteristics and I ran into some complications with the peekMin() function because if the return type is a Card,there are compile errors if I try to return null when the heap is empty. 
+
+-IH
