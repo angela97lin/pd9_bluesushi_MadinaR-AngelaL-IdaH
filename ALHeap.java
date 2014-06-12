@@ -14,7 +14,6 @@ public class ALHeap {
 
     //instance vars
     private ArrayList<Card> _heap; //underlying container is array of Integers
-
     /*****************************************************
      * default constructor  ---  inits empty heap
      *****************************************************/
@@ -81,12 +80,7 @@ public class ALHeap {
       * Postcondition: Heap remains unchanged.
       *****************************************************/
     public Card getMin() { 
-	try {
 	    return _heap.get(0);
-	}
-	catch (NullPointerException e) {
-	    return new Card(-1, null);
-	}
     } //O(1)
 
 
@@ -117,8 +111,6 @@ public class ALHeap {
 		break;
 	}
     } //O(logn)
-
-
 
     /*****************************************************
      * removeMin()  ---  means of removing an element from heap

@@ -101,7 +101,7 @@ public class Hand {
      *****************************************************/    
     public void add(Card c){
 	hand.add(c);
-	sort();
+	heap.add(c);
     }
 
     /*****************************************************
@@ -109,16 +109,15 @@ public class Hand {
      * @param c -- add Card c to hand and sorts the hand
      *****************************************************/
     public ArrayList<Card> sort() {
-	//create the heap 
-	for (Card i: hand){
-	    heap.add(i);
-	}
-	
+
 	//return ArrayList<Card> of sorted heap
 	int len = hand.size();
 	ArrayList<Card> sorted = new ArrayList<Card>();
 	for (int i = 0; i < len; i++){
-	    sorted.add(heap.getMin());
+	    if (heap.isEmpty() != true){
+		sorted.add(heap.getMin());
+		heap.removeMin();
+	    }
 	}
 	
 	return sorted;
@@ -144,9 +143,10 @@ public class Hand {
 	h.add(new Card(5, "Spade"));
 	h.add(new Card(2, "Spade"));
         h.add(new Card(10, "Spade"));
-	h.add(new Card(7, "Diamonds"));
+	h.add(new Card(7, "Diamond"));
 	h.add(new Card(11, "Spade"));
 
-	System.out.println(h);
+	ArrayList<Card> sorted = h.sort();
+	System.out.println(sorted);
     }
 }
