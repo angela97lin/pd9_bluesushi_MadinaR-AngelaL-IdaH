@@ -115,3 +115,8 @@ Wednesday, June 11th 2014
 
 I was previously having trouble how trying to implement heapsort on the hand class because of the return type of removeMin() and peekMin() functions in ALHeap.java. I didn't want it to return a null value as the card if the it ran out of cards to sort, so I ended up just saying to continue to sort if there were still elements in the heap. I also needed to create a simple getMin() function which would access the Card at the root of a min heap. Now we have it so that it is correctly sorted. I think my next step is to make it so that it will display the hand as a collection of cards on the screen. 
 -IH
+
+Today we discussed all tasks we've already completed & defined the tasks we will have to focus on in the days to come.
+Our main point of discussion involved our approach to the GUI. We decided that we'll stick with allowing the user to select cards all at once
++ then send them all to the Driver for processing. 
+-MR
