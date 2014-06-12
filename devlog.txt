@@ -110,3 +110,8 @@ ugly and unnecessary errors.
 I worked on giving gui characteristics to the Card class. Madina already found a bunch of gif images of the cards that make up the 52 cards of the deck. I have made it so that the image is loaded based on the integer value of the card and the suit which the card is from. This will directly choose the correct card from the folder. Also I realized that some cards will not be face up such as the pile and the computer's cards because those are cards that we cannot see. So we will need to find a face down card to add to that folder. Next I worked on trying to figure out how to incorporate heapsort in our hand class so that the hand is automagically sorted for the user and the computer. This will make it easier for the user and computer to search and find a particular card. I added ALHeap to this file so that we can use heap characteristics and I ran into some complications with the peekMin() function because if the return type is a Card,there are compile errors if I try to return null when the heap is empty. 
 
 -IH
+
+Wednesday, June 11th 2014
+
+I was previously having trouble how trying to implement heapsort on the hand class because of the return type of removeMin() and peekMin() functions in ALHeap.java. I didn't want it to return a null value as the card if the it ran out of cards to sort, so I ended up just saying to continue to sort if there were still elements in the heap. I also needed to create a simple getMin() function which would access the Card at the root of a min heap. Now we have it so that it is correctly sorted. I think my next step is to make it so that it will display the hand as a collection of cards on the screen. 
+-IH
