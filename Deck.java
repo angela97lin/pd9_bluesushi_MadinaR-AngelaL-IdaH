@@ -25,15 +25,15 @@ public class Deck {
 	    }
 	}
 	
-	  Random r = new Random();
-	  for (int i = 0; i < deck.size()*2; i++){
+	Random r = new Random();
+	for (int i = 0; i < deck.size()*2; i++){
 	    int rand1 = r.nextInt(deck.size());
 	    int rand2 = r.nextInt(deck.size());
 
 	    swap(rand1,rand2);
 	}
 	
-	  half();
+	half();
     }
     //Used in the shuffling of our deck; it swaps two cards in their positions
     public void swap(int index1, int index2){
@@ -68,24 +68,22 @@ public class Deck {
     //DEAL: 
     //takes an ArrayList (in our case, half), a Computer, and a Player as its parameters. Then, using the ArrayList specified in the parameters, it distributes 13 cards to each player.
     //Only used at the beginning of each game and takes advantage of how our Deck is already shuffled. Woohoo!
-    public void deal(ArrayList<Card> c, Computer comp, Player p){
+    public void deal(Computer comp, Player p){
 	for (int i = 0; i<13; i++){
-	    p.getHand().add(c.remove(c.size()-1));
-	}
-	for (int j = 0; j<13; j++){
-	    //deal to computer
-	    comp.getHand().add(c.remove(c.size()-1));
+	    p.getHand().add(half.remove(half.size()-1));
+	    comp.getHand().add(half.remove(half.size()-1));
 	}
     }
 
 
     public static void main(String[] args){
         Deck d = new Deck();
-	System.out.println(d);
+	//System.out.println(d);
 	ArrayList<Card> e = new ArrayList<Card>();
-	Player p = new Player(e);
-	Computer c = new Computer(e,5);
-	d.deal(half, c, p);
+	Player p = new Player();
+	//Computer c = new Computer(e,5);
+	Computer c = new Computer();
+	d.deal(c, p);
 	System.out.println(p.getHand());
     }
 

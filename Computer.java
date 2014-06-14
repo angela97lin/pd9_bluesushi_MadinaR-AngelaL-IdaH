@@ -7,8 +7,9 @@ import java.io.*;
 public class Computer {
 
     private Hand hand;
+    private int trickery; //how good the computer will be at BS-ing
+    private int gullibility; //how easily the computer can fall to someone else's BS
     private int lvl; //Level of difficulty, 1-3 (1 = easy, 2 = medium, 3 = hard)
-    private Behavior behavior;
     
     /*
      * Constructor will set up the Computer's cards as well as level of
@@ -22,11 +23,7 @@ public class Computer {
      */
     public Computer(ArrayList<Card> cards, int lvl){
         hand = new Hand(cards);
-        int trickery; //how good the computer will be at BS-ing
-        int gullibility; //how easily the computer can fall to someone else's BS
-        
         this.lvl = lvl;
-        
         if(lvl == 1) {
             trickery = (int)(Math.random() * 6) + 1;
             gullibility = (int)(Math.random() * 6) + 1;
@@ -37,8 +34,6 @@ public class Computer {
             trickery = (int)(Math.random() * 6) + 15;
             gullibility = (int)(Math.random() * 6) + 15;
         }
-        behavior = new Behavior(gullibility, trickery);
-        
     }
 
     /*
@@ -50,24 +45,18 @@ public class Computer {
      * expects next. This is to allow computer to check to see if it has that
      * value.
      *
+     * NOTE TO SELF: Finish the makeMove method!!!! -MR
      */
     
     public String makeMove(int x) {
         String retStr = "";
         
-        String[] actions = behavior.act(hand.hasCard(x));
-        hand.remove(x);
-        
+        if (hand.hasCard(x)) { //if the computer does have a card with
+            hand.remove(x);
+        }
         return retStr;
     }
-    
-    /*
-     The computer will decide whether to call  BS or not.
-     */
-    public boolean callBS() {
-        return false;
-    }
-    
+                  
     //public accessor to hand
     public Hand getHand() {
         return hand;
