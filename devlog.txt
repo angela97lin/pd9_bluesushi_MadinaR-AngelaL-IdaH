@@ -1,8 +1,12 @@
 BlueSushi's DevLog:
 
 Tuesday, May 27, 2014
-We introduced our idea and how to play BS to Ida, our new team member. We reviewed our proposal and thought about where to start tackling the game. Although we had previously wanted to implement a way for two separate human users to play, we realized, after discussing the issue with classmates and the internet, that it might be too time-consuming and too difficult. :(
-We also resent Mr. Brown the proposal email/resubmitted the google doc form/updated the GitHub repo's name to reflect the addition to our team :)
+We introduced our idea and how to play BS to Ida, our new team member. We reviewed our proposal 
+and thought about where to start tackling the game. Although we had previously wanted to implement a way 
+for two separate human users to play, we realized, after discussing the issue with classmates and the internet,
+that it might be too time-consuming and too difficult. :(
+We also resent Mr. Brown the proposal email/resubmitted the google doc form/updated the GitHub repo's name 
+to reflect the addition to our team :)
 -AL
 
 Thursday, May 28, 2014
@@ -13,7 +17,8 @@ We've decided on the following classes:
   -Driver
   -AI aka Computer (w/ subclasses that are easy, hard, etc.)
   
-We decided that because BS would be ridiculously easy if we had only two players (player v. computer), we are spliting the deck into four, and the winner will be determined by the best out of two games. 
+We decided that because BS would be ridiculously easy if we had only two players (player v. computer), 
+we are spliting the deck into four, and the winner will be determined by the best out of two games. 
 Also, we will likely use a sprite sheet for GUI...
 
 GUI features thus far:
@@ -30,31 +35,49 @@ Card Class features...
  -AL
 
 Friday, May 29th, 2014
-In class, we worked on one computer and coded the basics of the basics. We constructed a basic Card class, Hand class, Computer class, and Driver class. More importantly, we continued to discuss the algorithms behind our project.
+In class, we worked on one computer and coded the basics of the basics. We constructed a basic Card class, 
+Hand class, Computer class, and Driver class. More importantly, we continued to discuss the algorithms behind 
+our project.
 -AL
 
 Saturday, May 32st, 2014
-Looked into possiblity of some better ways to diagram our classes. Remembered that I used a web diagramming website called MindMeister for a freshman year global history project. Created an account on MindMeister and transferred what we had on paper to the web. Sent this to the other members- tentative as to whether we will continue using it. 
+Looked into possiblity of some better ways to diagram our classes. Remembered that I used a web diagramming website 
+called MindMeister for a freshman year global history project. Created an account on MindMeister and transferred what
+we had on paper to the web. Sent this to the other members- tentative as to whether we will continue using it. 
 -IH
 
 Sunday, June 1st, 2014
-Added a little more to our current files. Beginning to mess with GUI since we decided it was better to do the GUI concurrently but GUI seems to be a challenge. Currently, I can only produce a nice gray screen with an accurate title. I was able to (re)learn how to read from a text file. Hooray!
+Added a little more to our current files. Beginning to mess with GUI since we decided it was better to do the GUI
+concurrently but GUI seems to be a challenge. Currently, I can only produce a nice gray screen with an accurate title. 
+I was able to (re)learn how to read from a text file. Hooray!
 -AL
 
 Monday June 2nd. 2014
-Added the Deck class. This class creates a shuffled deck ready to use! Also added a few testers/methods in other classes. Staying away from GUI for as long as possible, aha.
+Added the Deck class. This class creates a shuffled deck ready to use! Also added a few testers/methods in other classes.
+In class, we had a little trouble trying to set the background of our GUI window to our desired color. This is because 
+we first attempted to just "setBackground(Color.YELLOW), which produced nothing. After some research (aka Googling), 
+we realized that we had to call the ContentPane. Hence, we had to do getContentPane.setBackground(Color.YELLOW). YAY!
 -AL
-In class, we had a little trouble trying to set the background of our GUI window to our desired color. This is because we first attempted to just "setBackground(Color.YELLOW), which produced nothing. After some research (aka Googling), we realized that we had to call the ContentPane. Hence, we had to do getContentPane.setBackground(Color.YELLOW). YAY!
--AL
-At home, I was assigned the task of adding music to our GUI. Surprisingly, I had some difficulties trying to implement the music. This is, I later found out, because I attempted to use a .mp3 file when only .wav files are acceptable. I also attempted to make the music run continuously, but after looking up some code that failed to produce results, decided that it was best to first make a Music.java file and then later implement it in a looping function (ex:paint function used to draw the GUI). Still unsure about song choice as well, haha.
+At home, I was assigned the task of adding music to our GUI. Surprisingly, I had some difficulties trying to implement
+the music. This is, I later found out, because I attempted to use a .mp3 file when only .wav files are acceptable.
+I also attempted to make the music run continuously, but after looking up some code that failed to produce results,
+decided that it was best to first make a Music.java file and then later implement it in a looping function 
+(ex:paint function used to draw the GUI). Still unsure about song choice as well, haha.
 -AL
 
-I was assigned to work on the Setting class which would later be joined together with the GUI driver class. I created a "Setting" button and was able to find a picture of a character. I attemped to use ActionListener so that the button had a function when you clicked it, but I was unsuccesful as nothing changed after clicking the Setting button... :(
+I was assigned to work on the Setting class which would later be joined together with the GUI driver class.
+I created a "Setting" button and was able to find a picture of a character. I attemped to use ActionListener so that 
+the button had a function when you clicked it, but I was unsuccesful as nothing changed after clicking the Setting
+button... :(
 -IH
 
 Tuesday June 3rd, 2014
-In order to maximize efficiency, we'll be building different parts of the Driver separately. After we finish building all of the key parts, we will combine everything. 
-Currently, we are having trouble with implementing ActionListener. Although the ActionListener is working fine, the sequence of actions it is supposed to trigger is not working. (In the Setting class, a button is supposed to lead on to a screen where the player is able to choose different characters. However, even after the player repeatedly clicks on the button, no such action occurs.)
+In order to maximize efficiency, we'll be building different parts of the Driver separately. After we finish building
+all of the key parts, we will combine everything. 
+Currently, we are having trouble with implementing ActionListener. Although the ActionListener is working fine, 
+the sequence of actions it is supposed to trigger is not working. (In the Setting class, a button is supposed to 
+lead on to a screen where the player is able to choose different characters. However, even after the player repeatedly 
+clicks on the button, no such action occurs.)
 -MR
 
 In order to begin shaping the AI for this game, I created the appropriate methods in the Computer, Hand and Card classes.
@@ -64,7 +87,14 @@ it didn't work out as planned, so I scapped my code. I plan to get back to this 
 and after we have a stable & usable GUI as I feel the animation is something that is fun & nice, but not *necessary*
 for the game. -MR
 
-Today I continued to work on figuring out what went wrong last night in the Setting class. Ideally, after clicking the setting button the setting button should dissapear and the user should see a new set of instructions with images of different characters that he/she can choose from. I was able to successfully get rid of the setting button once it was clicked. From researching for a while, I finally figured out how to add an image. woooo! I was able to create it as an ImageIcon and then add it to a panel as a label. However, I soon realized that there must be additional functionality besides just having a bunch of images for characters. So I then created the images as buttons. The user clicks the character button and based on which button was clicked (ActionListener), we will know which image will be present during the game.
+Today I continued to work on figuring out what went wrong last night in the Setting class. Ideally, after clicking the 
+setting button the setting button should dissapear and the user should see a new set of instructions with images of 
+different characters that he/she can choose from. I was able to successfully get rid of the setting button once it
+was clicked. From researching for a while, I finally figured out how to add an image. woooo! I was able to create it
+as an ImageIcon and then add it to a panel as a label. However, I soon realized that there must be additional
+functionality besides just having a bunch of images for characters. So I then created the images as buttons. 
+The user clicks the character button and based on which button was clicked (ActionListener), we will know which 
+image will be present during the game.
 -IH
 
 Sunday, June 8, 2014:
@@ -96,7 +126,6 @@ parameter in which it would use as its Hand. Yet, my deal method, which is suppo
 and Computer, required a Player and Computer parameter... Pretty much, one thing relied on the something else that
 relied on the first thing. I decided on just using a empty dummy ArrayList to feed to the instantiation of the Player
 and Computer class first, and then having deal() update these ArrayLists with the Player or the Card's actual hand. 
-
 -AL
 
 I'm trying to flesh out a viable AI that uses queues as we specified in our initial proposal. 
@@ -107,13 +136,26 @@ and has me error-checking every 2 minutes. I do hope that in the long run, the e
 ugly and unnecessary errors. 
 -MR
 
-I worked on giving gui characteristics to the Card class. Madina already found a bunch of gif images of the cards that make up the 52 cards of the deck. I have made it so that the image is loaded based on the integer value of the card and the suit which the card is from. This will directly choose the correct card from the folder. Also I realized that some cards will not be face up such as the pile and the computer's cards because those are cards that we cannot see. So we will need to find a face down card to add to that folder. Next I worked on trying to figure out how to incorporate heapsort in our hand class so that the hand is automagically sorted for the user and the computer. This will make it easier for the user and computer to search and find a particular card. I added ALHeap to this file so that we can use heap characteristics and I ran into some complications with the peekMin() function because if the return type is a Card,there are compile errors if I try to return null when the heap is empty. 
+I worked on giving gui characteristics to the Card class. Madina already found a bunch of gif images of the cards that make 
+up the 52 cards of the deck. I have made it so that the image is loaded based on the integer value of the card and the 
+suit which the card is from. This will directly choose the correct card from the folder. Also I realized that some cards
+will not be face up such as the pile and the computer's cards because those are cards that we cannot see. So we will 
+need to find a face down card to add to that folder. Next I worked on trying to figure out how to incorporate heapsort 
+in our hand class so that the hand is automagically sorted for the user and the computer. This will make it easier for
+the user and computer to search and find a particular card. I added ALHeap to this file so that we can use heap 
+characteristics and I ran into some complications with the peekMin() function because if the return type is a Card,
+there are compile errors if I try to return null when the heap is empty. 
 
 -IH
 
 Wednesday, June 11th 2014
 
-I was previously having trouble how trying to implement heapsort on the hand class because of the return type of removeMin() and peekMin() functions in ALHeap.java. I didn't want it to return a null value as the card if the it ran out of cards to sort, so I ended up just saying to continue to sort if there were still elements in the heap. I also needed to create a simple getMin() function which would access the Card at the root of a min heap. Now we have it so that it is correctly sorted. I think my next step is to make it so that it will display the hand as a collection of cards on the screen. 
+I was previously having trouble how trying to implement heapsort on the hand class because of the return type of 
+removeMin() and peekMin() functions in ALHeap.java. I didn't want it to return a null value as the card if the it 
+ran out of cards to sort, so I ended up just saying to continue to sort if there were still elements in the heap. 
+I also needed to create a simple getMin() function which would access the Card at the root of a min heap. 
+Now we have it so that it is correctly sorted. I think my next step is to make it so that it will display the 
+hand as a collection of cards on the screen. 
 -IH
 
 Today we discussed all tasks we've already completed & defined the tasks we will have to focus on in the days to come.
@@ -122,8 +164,27 @@ Our main point of discussion involved our approach to the GUI. We decided that w
 -MR
 
 Saturday, June 15th, 2014
-A lot of progress today. I decided to add a lot of GUI features to our game, along with adding to the concept of our game. This involved (painful) writing of a lot of draw functions, and adding a lot of instance variables and methods. For the Card class, I added the ability to check whether a card was facing up or down, access to its x and y coordinates, and the ability to check whether or not it was selected by the player. This required the creation of a Key class (which was preferred over simply making each class implement MouseListener/MouseMotionListener). Also created a GamePlay class which is the main JPanel that will 'run' our program (in the Run class, which is essentially our driver). The Play class was created to store the computer, the player, and the card stack that will grow in the middle of the screen when the player or computer places down cards. It also uses a lengthy draw function in order to draw the screen, required buttons, and both the computer and player's cards. The draw function was lengthy partially because it was difficult to place more than a certain number of cards on the screen without the cards being drawn off the screen. Various other classes were created and modified (ex: Settings class, Menu class) to include the GUI aspects of our game.
-On a more conceptual note, the Computer class was also updated for each different level. One of the main features of our game was that we would be able to get the Computer to say certain Strings in order to make up for how we cannot really see what the computer's face is. Although currently a little inefficient, when the Computer does not have the appropriate card it must place down, it, based on its level, has a higher or lower chance of giving a good bluff. Furthermore, it has a different approach to which cards it puts down based on its level: the easier two levels will place down a random card from its hand, while the harder level will choose the lowest card in its hand--a strategy often used in playing BS.
-As the last day, it is important to find how to loop the actions of the Computer and the Player until either of the two has no cards left. 
+A lot of progress today. I decided to add a lot of GUI features to our game, along with adding to the concept of our 
+game. This involved (painful) writing of a lot of draw functions, and adding a lot of instance variables and methods.
+For the Card class, I added the ability to check whether a card was facing up or down, access to its x and y coordinates,
+and the ability to check whether or not it was selected by the player. This required the creation of a Key class 
+(which was preferred over simply making each class implement MouseListener/MouseMotionListener). Also created
+a GamePlay class which is the main JPanel that will 'run' our program (in the Run class, which is essentially our driver). 
+The Play class was created to store the computer, the player, and the card stack that will grow in the middle of the 
+screen when the player or computer places down cards. It also uses a lengthy draw function in order to draw the screen,
+required buttons, and both the computer and player's cards. The draw function was lengthy partially because it was
+difficult to place more than a certain number of cards on the screen without the cards being drawn off the screen. 
+Various other classes were created and modified (ex: Settings class, Menu class) to include the GUI aspects of our game.
+On a more conceptual note, the Computer class was also updated for each different level. One of the main features 
+of our game was that we would be able to get the Computer to say certain Strings in order to make up for how we cannot 
+really see what the computer's face is. Although currently a little inefficient, when the Computer does not have the 
+appropriate card it must place down, it, based on its level, has a higher or lower chance of giving a good bluff. 
+Furthermore, it has a different approach to which cards it puts down based on its level: the easier two levels will 
+place down a random card from its hand, while the harder level will choose the lowest card in its hand--a strategy 
+often used in playing BS.
+As the last day, it is important to find how to loop the actions of the Computer and the Player until either of 
+the two has no cards left. Because the various drawing components and perhaps other methods have made the game super laggy
+and slow, it is also important to figure out exaclty WHY or what is causing the game to play so slowly--we may have to
+take out the Music addition we wanted before in order to make the game faster.
 (GUI is painful.)
 -AL
