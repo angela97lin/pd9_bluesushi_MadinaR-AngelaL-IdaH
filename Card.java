@@ -18,8 +18,10 @@ public class Card extends Component{
     private int intValue; //contains numerical value of card (J = 11, Q = 12, A = 1, 2 = 2, etc.)
     private String suit; //contains the suit of the card (ex: Hearts, Clover, Diamond, Spade)
     // private String faceValue; // 2-10, J, Q, K, A
-    BufferedImage img;
+    BufferedImage img,bck;
     private boolean faceup;
+    private int mx,my,px,py;
+    private boolean select;
 
     //CONSTRUCTOR - sets the intValue and suit
     public Card(int x, String s) {
@@ -32,7 +34,7 @@ public class Card extends Component{
 	faceup = false; // initially they are all face down
 
 	/*****************************************************
-	Note: the code below displays the image of the card but only when it the gif file is in the same file
+	Note: the code below displays the image of the card but only when it= the gif file is in the same file
         Still need to work on:
         display face down card or face up card
         if (faceup == false) {display face down card }
@@ -43,15 +45,19 @@ public class Card extends Component{
 	*****************************************************/
 
 	//	else {
-	    String filename = intValue + s.substring(0,1).toLowerCase() + ".gif";
-	    try {
-		img = ImageIO.read(new File("images/" + filename));
-	    }
-	    catch (IOException e){
-	    }
-	    //	}
-	
-	
+	String filename = intValue + s.substring(0,1).toLowerCase() + ".gif";
+	try {
+	    img = ImageIO.read(new File("images/" + filename));
+	    bck = ImageIO.read(new File("images/back.png"));
+	}
+	catch (IOException e){
+	}
+	//	}
+	px = 0;
+	py = 0;
+	mx = px;
+	my = py;
+	select = false;
     }
 
     //public accessor to intValue
@@ -72,6 +78,18 @@ public class Card extends Component{
         return (other.getIntVal() == getIntVal()) && (other.getSuit().equals(getSuit()));
     }
 
+    public boolean selected(){
+	return select;
+    }
+    
+    public void select(){
+	select =true;
+    }
+    
+    public void unselect(){
+	select = false;
+    }
+
     public String toString(){
         String retS = "";
         retS = intValue + ", " + suit;
@@ -81,10 +99,17 @@ public class Card extends Component{
     // public void draw(Graphics g){
     // }
     
-    public void draw(Graphics g,int x, int y) {
-	g.drawImage(img, x, y, null);
+    public void draw(Graphics g) {
+	if(faceup){
+	    g.drawImage(img, px, py, null);
+	}else{
+	    g.drawImage(bck,px,py,null);
+	}
     }
 
+    public void changeFace(){
+	faceup = !faceup;
+    }
 
     public Dimension getPreferredSize() {
         if (img == null) {
@@ -94,6 +119,37 @@ public class Card extends Component{
        }
     }
 
+    public void setXCor(int val){
+	px = val;
+    }
+
+    public void setYCor(int val){
+	py = val;
+    }
+
+    public void reveal(int num){
+	changeFace();
+	setXCor((GamePlay.myWidth/2+37)+num*74);
+    }
+
+    public int getXCor(){
+	return px;
+    }
+
+    public int getYCor(){
+	return py;
+    }
+    //pops up card when selected by changing xcor/ycor
+    public void move(){
+    }
+
+    public boolean isBetween(float objeX, float objeY) {
+	if ((px<= objeX && px+70>=objeX)) {
+	    if ((py<= objeY && py+100 >=objeY)){
+		return true;
+	    }
+	}return false;
+    }
     public static void main(String[] args){
 	JFrame f = new JFrame( "Load Card Sample");
 	
