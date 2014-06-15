@@ -6,12 +6,15 @@ import javax.imageio.*;
 
 public class Play{
     
+    //Instance Varible - objects in the game include:
     public static Deck deck;
     public static Player p;
     public static Computer c;
     public static CardStack cs;
-    public static int placed;
 
+    public static int placed;
+    public boolean gameOver;
+    
     public Play(){
         define();
     }
@@ -33,6 +36,14 @@ public class Play{
                 placed ++;
             }
         }
+    }
+
+    public boolean gameOver(){
+
+	gameOver =  (c.getHand().size() == 26 || c.getHand().size() == 0) 
+	    && (p.getHand().size()== 26 || c.getHand()size() == 0);
+	return gameOver;
+    
     }
     
     public void checkAll(float x, float y){
@@ -145,5 +156,9 @@ public class Play{
             }
         }
     }
+
+
+
+
 
 }
