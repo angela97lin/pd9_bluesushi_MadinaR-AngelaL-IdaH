@@ -12,6 +12,7 @@ public class Computer {
     private int trickery; //how good the computer will be at BS-ing
     private int gullibility; //how easily the computer can fall to someone else's BS
     public static int lvl; //Level of difficulty, 1-3 (1 = easy, 2 = medium, 3 = hard)
+    private BehaviorQueue behaviors;
     
     /*
      * Constructor will set up the Computer's cards as well as level of
@@ -23,34 +24,11 @@ public class Computer {
      * Trickery from 1-21    Easy 1-7, Medium 8-14, Hard 15-21
      * Gullibility from 1-21 Easy 1-7, Medium 8-14, Hard 15-21
      */
-    public Computer(){
-	lvl = 1;
-	hand = new Hand();
-
-	goodEmotions = new ArrayList<String>();
-	badEmotions = new ArrayList<String>();
-	goodEmotions.add("The Computer smiled.");
-	goodEmotions.add("The Computer grinned.");
-	goodEmotions.add("The Computer has a blank face.");
-	goodEmotions.add("The Computer yawned.");
-	goodEmotions.add("The Computer smirked.");
-	goodEmotions.add("The Computer cackled.");
-	goodEmotions.add("The Computer whistled.");
-
-	badEmotions.add("The Computer's hands are shaking!");
-	badEmotions.add("The Computer is looking down.");
-	badEmotions.add("The Computer moaned.");
-	badEmotions.add("The Computer is spacing out.");
-	badEmotions.add("The Computer placed the cards down nervously.");
-	badEmotions.add("The Computer giggled nervously.");
-	badEmotions.add("The Computer cursed.");
-    }
+    
     
     public Computer(ArrayList<Card> cards, int lvl){
-	hand = new Hand(cards);
+        hand = new Hand(cards);
         this.lvl = lvl;
-	//is this necessary
-	//sets stats based on lvl of the computer
         if(lvl == 1) {
             trickery = (int)(Math.random() * 6) + 1;
             gullibility = (int)(Math.random() * 6) + 1;
@@ -61,8 +39,79 @@ public class Computer {
             trickery = (int)(Math.random() * 6) + 15;
             gullibility = (int)(Math.random() * 6) + 15;
         }
+        defineBehavior();
     }
-
+    public Computer() {
+        lvl = 1; //Automatic
+        trickery = (int)(Math.random() * 6) + 1;
+        gullibility = (int)(Math.random() * 6) + 1;
+        defineBehavior();
+        
+        //Decided to keep the following good/bad emotions until I fully revised the rest of code
+        goodEmotions = new ArrayList<String>();
+        badEmotions = new ArrayList<String>();
+        goodEmotions.add("The Computer smiled.");
+        goodEmotions.add("The Computer grinned.");
+        goodEmotions.add("The Computer has a blank face.");
+        goodEmotions.add("The Computer yawned.");
+        goodEmotions.add("The Computer smirked.");
+        goodEmotions.add("The Computer cackled.");
+        goodEmotions.add("The Computer whistled.");
+        
+        badEmotions.add("The Computer's hands are shaking!");
+        badEmotions.add("The Computer is looking down.");
+        badEmotions.add("The Computer moaned.");
+        badEmotions.add("The Computer is spacing out.");
+        badEmotions.add("The Computer placed the cards down nervously.");
+        badEmotions.add("The Computer giggled nervously.");
+        badEmotions.add("The Computer cursed.");
+    }
+    
+    /*
+     * percent refers to the % chance that the Computer will have
+     * behavior that corresponds with its trickery #
+     * if trickery = 21, its behavior will be random (thus harder)
+     */
+    public void defineBehavior() {
+        behaviors = new BehaviorQueue();
+        int trick = trickery;
+        int percent = ((21 - trickery) * 100 / 21);
+        
+        for(int x = 0; x < 20; x++) {
+            if(percent >= (Math.random() * 100)) {
+                if(trickery >= 1 && trickery <= 7)
+                    trick = (int) (Math.random() * 7);
+                else if (trickery >= 7 && trickery <= 14)
+                    trick = (int) (Math.random() * 7) + 7;
+                else
+                    trick = (int) (Math.random() * 7) + 14;
+                //System.out.println("1");
+            }
+            
+            else {
+                trick = (int)(Math.random() * 21);
+                //System.out.println("2");
+            }
+            behaviors.enqueue(new Behavior(trick));
+        }
+        
+        /*
+         for(int x = 0; x < 20; x++) {
+         behaviors.enqueue(new Behavior(trickery));
+         }*/
+        
+    }
+    
+    //Testing method:
+    public String seeBehavior() {
+        Behavior x = behaviors.peekFront();
+        behaviors.dequeue();
+        behaviors.enqueue(x);
+        
+        return x.getStr();
+    }
+    
+    
     /*
      * The String returned by the makeMove() method will be the computer's
      * reactions to the move it just made.

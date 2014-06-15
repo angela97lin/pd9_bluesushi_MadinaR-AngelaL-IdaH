@@ -1,32 +1,78 @@
 /*
-    This class will be called on by the Computer whenever it tries to make a move.
-    The computer will have a specified behavior, which will be stored
-    in this class.
+ This class will be called on by the Computer whenever it tries to make a move.
+ The computer will have a specified behavior, which will be stored
+ in this class.
  */
 
 public class Behavior {
     
-    String response;
-    int trickery, gullibility;
-    BehaviorQueue actions;
+    private static int trickery;
+    private static String response;
+    private static String[] adjective = {
+    //little to no confidence
+    "anxiously", "nervously", "restlessly",
+    "apprehensively", "hastily","hurriedly", "briskly",
+    //medium confidence:
+    "eagerly", "with no apparent reaction", "energetically", "seriously",
+    "carefully", "quietly", "impatiently",
+    //lots of confidence:
+    "assertively", "assuredly", "with conviction", "while laughing loudly",
+    "confidently", "enthusiastically", "purposefully" };
     
     
-    public Behavior(int gullibility , int trickery) {
-        this.gullibility = gullibility;
-        this.trickery = trickery;
+    public Behavior() {
+        setStr();
+    }
+    
+    public Behavior(int trick) {
+        trickery = trick;
+        setStr();
+    }
+    
+    public static String getStr() {
+        return response;
     }
     
     /*
-     Will return an array containing all of the necessary information
-     for the computer to make a move.
-     The following will be the format for the output:
-     ["Behavioral String, ex. Giggled nervously",
-        "a string that contains an integer of the # of cards to remove from hand",
+     * Trickery from 1-21    Easy 1-7, Medium 8-14, Hard 15-21
      
-     ]
-     */
-    public String[] act(int numCards) {
-        if(numCards == 0 && trickery >= ((Math.random() * 21) + 1) )
-            response = actions.dequeue();
+     public static void setStr() {
+     int percent = ((21 - trickery) * 100 / 21);
+     
+     if(percent >= (Math.random() * 100)) {
+     if(trickery >= 1 && trickery <= 7)
+     response = adjective[(int) (Math.random() * 7)];
+     else if (trickery >= 7 && trickery <= 14)
+     response = adjective[(int) (Math.random() * 7) + 7];
+     else
+     response = adjective[(int) (Math.random() * 7) + 14];
+     //System.out.println("1");
+     }
+     
+     else {
+     response = adjective[(int)(Math.random() * adjective.length)];
+     //System.out.println("2");
+     }
+     
+     } */
+    
+    public static void setStr() {
+        response = adjective[trickery];
     }
+    
+    /* method callBS will determine whether the computer will call BS or not
+     * hasCard refers to whether the player placed the correct card or not
+     * gullibility is the computer's attribute
+     */
+    public boolean callBS(int gullibility, boolean hasCard) {
+        return false;
+    }
+    
+    //For testing purposes:
+    public static void main(String[] args) {
+        Behavior b = new Behavior(20);
+        b.setStr();
+        System.out.println(b.getStr());
+    }
+    
 }
