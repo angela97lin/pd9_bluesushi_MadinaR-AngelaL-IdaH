@@ -3,9 +3,6 @@ import java.io.*;
 import java.awt.*;
 import java.awt.image.*;
 import javax.imageio.*;
-import javax.swing.*;
-import java.awt.event.*;
-
 
 /*=======================================
  Player Class
@@ -17,19 +14,14 @@ public class Player{
     //INSTANCE VARIABLE
     private Hand myHand;
     public static BufferedImage profPic;
-    public static String name;
-    
+
     //CONSTRUCTOR: instantiate player with a hand
     public Player(){
 	//myHand = new Hand(cards); // gets it from the Driver class
 	myHand = new Hand();
     }
 
-    public Player (String playerName){
-	myHand = new Hand();
-	name = playerName;
-	
-    }
+
     //tentatively String
     public String makeMove(){
 	String retStr = "";
