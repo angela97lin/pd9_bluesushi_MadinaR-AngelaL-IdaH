@@ -13,7 +13,6 @@ public class Play{
     public static CardStack cs;
 
     public static int placed;
-    public boolean gameOver;
     
     public Play(){
         define();
@@ -38,14 +37,6 @@ public class Play{
         }
     }
 
-    public boolean gameOver(){
-
-	gameOver =  (c.getHand().size() == 26 || c.getHand().size() == 0) 
-	    && (p.getHand().size()== 26 || c.getHand()size() == 0);
-	return gameOver;
-    
-    }
-    
     public void checkAll(float x, float y){
         for (int i =0; i < p.getHand().size();i++){
             if(p.getHand().getCard(i).isBetween(x,y)){
