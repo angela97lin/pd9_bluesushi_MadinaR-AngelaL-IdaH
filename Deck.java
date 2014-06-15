@@ -71,16 +71,14 @@ public class Deck {
     public void deal(Computer comp, Player p){
 	for (int i = 0; i<13; i++){
 	    p.getHand().add(half.remove(half.size()-1));
-	    p.getHand().getCard(i).changeFace();
 	    comp.getHand().add(half.remove(half.size()-1));
 	}
-	p.getHand().sort();
     }
 
 
     public static void main(String[] args){
         Deck d = new Deck();
-	System.out.println(d);
+	//System.out.println(d);
 	ArrayList<Card> e = new ArrayList<Card>();
 	Player p = new Player();
 	//Computer c = new Computer(e,5);

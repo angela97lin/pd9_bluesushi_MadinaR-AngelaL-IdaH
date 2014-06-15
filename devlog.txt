@@ -1,0 +1,122 @@
+BlueSushi's DevLog:
+
+Tuesday, May 27, 2014
+We introduced our idea and how to play BS to Ida, our new team member. We reviewed our proposal and thought about where to start tackling the game. Although we had previously wanted to implement a way for two separate human users to play, we realized, after discussing the issue with classmates and the internet, that it might be too time-consuming and too difficult. :(
+We also resent Mr. Brown the proposal email/resubmitted the google doc form/updated the GitHub repo's name to reflect the addition to our team :)
+-AL
+
+Thursday, May 28, 2014
+The Planning Process! 
+We've decided on the following classes:
+  -Card
+  -Player
+  -Driver
+  -AI aka Computer (w/ subclasses that are easy, hard, etc.)
+  
+We decided that because BS would be ridiculously easy if we had only two players (player v. computer), we are spliting the deck into four, and the winner will be determined by the best out of two games. 
+Also, we will likely use a sprite sheet for GUI...
+
+GUI features thus far:
+ -"End Turn" button
+ -Cards
+ -Some kind of poker table
+ 
+Card Class features...
+ -Suit (String)
+ -Face Value (ex: "Q")
+ -Actual Value (ex: J = 11)
+ 
+ Woohoo! Moving along...
+ -AL
+
+Friday, May 29th, 2014
+In class, we worked on one computer and coded the basics of the basics. We constructed a basic Card class, Hand class, Computer class, and Driver class. More importantly, we continued to discuss the algorithms behind our project.
+-AL
+
+Saturday, May 32st, 2014
+Looked into possiblity of some better ways to diagram our classes. Remembered that I used a web diagramming website called MindMeister for a freshman year global history project. Created an account on MindMeister and transferred what we had on paper to the web. Sent this to the other members- tentative as to whether we will continue using it. 
+-IH
+
+Sunday, June 1st, 2014
+Added a little more to our current files. Beginning to mess with GUI since we decided it was better to do the GUI concurrently but GUI seems to be a challenge. Currently, I can only produce a nice gray screen with an accurate title. I was able to (re)learn how to read from a text file. Hooray!
+-AL
+
+Monday June 2nd. 2014
+Added the Deck class. This class creates a shuffled deck ready to use! Also added a few testers/methods in other classes. Staying away from GUI for as long as possible, aha.
+-AL
+In class, we had a little trouble trying to set the background of our GUI window to our desired color. This is because we first attempted to just "setBackground(Color.YELLOW), which produced nothing. After some research (aka Googling), we realized that we had to call the ContentPane. Hence, we had to do getContentPane.setBackground(Color.YELLOW). YAY!
+-AL
+At home, I was assigned the task of adding music to our GUI. Surprisingly, I had some difficulties trying to implement the music. This is, I later found out, because I attempted to use a .mp3 file when only .wav files are acceptable. I also attempted to make the music run continuously, but after looking up some code that failed to produce results, decided that it was best to first make a Music.java file and then later implement it in a looping function (ex:paint function used to draw the GUI). Still unsure about song choice as well, haha.
+-AL
+
+I was assigned to work on the Setting class which would later be joined together with the GUI driver class. I created a "Setting" button and was able to find a picture of a character. I attemped to use ActionListener so that the button had a function when you clicked it, but I was unsuccesful as nothing changed after clicking the Setting button... :(
+-IH
+
+Tuesday June 3rd, 2014
+In order to maximize efficiency, we'll be building different parts of the Driver separately. After we finish building all of the key parts, we will combine everything. 
+Currently, we are having trouble with implementing ActionListener. Although the ActionListener is working fine, the sequence of actions it is supposed to trigger is not working. (In the Setting class, a button is supposed to lead on to a screen where the player is able to choose different characters. However, even after the player repeatedly clicks on the button, no such action occurs.)
+-MR
+
+In order to begin shaping the AI for this game, I created the appropriate methods in the Computer, Hand and Card classes.
+Whenever necessary, I added new methods and adjusted some of the constructors.
+Before working on the AI, I was trying to implement an animation of the dealing of the computer deck in the GUI, but
+it didn't work out as planned, so I scapped my code. I plan to get back to this after all of the back-end work is complete
+and after we have a stable & usable GUI as I feel the animation is something that is fun & nice, but not *necessary*
+for the game. -MR
+
+Today I continued to work on figuring out what went wrong last night in the Setting class. Ideally, after clicking the setting button the setting button should dissapear and the user should see a new set of instructions with images of different characters that he/she can choose from. I was able to successfully get rid of the setting button once it was clicked. From researching for a while, I finally figured out how to add an image. woooo! I was able to create it as an ImageIcon and then add it to a panel as a label. However, I soon realized that there must be additional functionality besides just having a bunch of images for characters. So I then created the images as buttons. The user clicks the character button and based on which button was clicked (ActionListener), we will know which image will be present during the game.
+-IH
+
+Sunday, June 8, 2014:
+Tough luck today. Although I have not been able to git push and git pull my current changes yet...
+I was able to set the background of our current Driver file to an image (or any other image of our choosing).
+Unfortunately, I spent too much time looking up how to do so by converting an Image into a BufferedImage etc., before
+coming across a quick tutorial. After being convinced by some stackoverflow responses, I realized it was better to
+have all of our GUI components such that Driver does not extend JFrame but instead, simply creates a JFrame. Doing so
+will allow for more flexibilty since we are not going to attempt to overwrite any of the JFrame's methods. I am
+currently looking at how to drag an image from one place to another. While I have come across some code that seems to
+get the job done, I am hesitant. Will this work for Cards, which are not JUST card images? Can we simply move the
+cards around without corrupting their data? On a more conceptual note, I decided to remove from the deck from the
+right-side end because it is more efficient that way, as our current Deck uses an ArrayList as its underlying
+container. I have also added the ability to split the deck into two halves and use the first half as the ArrayList of
+cards that we will then distribute to the players. Still a little unsure about various design choices so waiting to
+talk to the other two :)
+-AL
+Continued working on the classes. Added ImagePanel class which is used in the DragImage class... Still not sure if we
+can use this in order to drag our cards around the screen (this is our current plan) but decided to keep it just in
+case. Wrote a half() method and a deal() method in the Deck class. The half() method simply fills in the half
+ArrayList instance variable, which contains half a deck of cards (since we only use half a deck). The deal() method
+will deal cards to both the player and the Computer by taking advantage of how our deck/half instance variables are
+already shuffled. This took me much longer than I expected because I had a hard time figuring out how it was possible
+to call on the private Hand in the player and the Computer class without instantiating a player and a Computer
+instance in the Deck class. If I were to instantiate a player and a Computer, I feared it would be a different
+methods parameters that we could then feed in from the Driver class, which would contain our Player and Computer. Yet,
+I came across another problem: Our Computer class and our Player class constructors currently take in an ArrayList
+parameter in which it would use as its Hand. Yet, my deal method, which is supposed to deal the cards to the Player
+and Computer, required a Player and Computer parameter... Pretty much, one thing relied on the something else that
+relied on the first thing. I decided on just using a empty dummy ArrayList to feed to the instantiation of the Player
+and Computer class first, and then having deal() update these ArrayLists with the Player or the Card's actual hand. 
+
+-AL
+
+I'm trying to flesh out a viable AI that uses queues as we specified in our initial proposal. 
+As of now, I am almost done creating the Behavior class. As soon as I finish, I will implement it in the Computer class.
+I find that the hardest part is designing exactly how the different components will interact with one another, so
+I try to adjust multiple classes concurrently. I realize, however, that this approach is much more time consuming
+and has me error-checking every 2 minutes. I do hope that in the long run, the extra minutes spent will prevent any
+ugly and unnecessary errors. 
+-MR
+
+I worked on giving gui characteristics to the Card class. Madina already found a bunch of gif images of the cards that make up the 52 cards of the deck. I have made it so that the image is loaded based on the integer value of the card and the suit which the card is from. This will directly choose the correct card from the folder. Also I realized that some cards will not be face up such as the pile and the computer's cards because those are cards that we cannot see. So we will need to find a face down card to add to that folder. Next I worked on trying to figure out how to incorporate heapsort in our hand class so that the hand is automagically sorted for the user and the computer. This will make it easier for the user and computer to search and find a particular card. I added ALHeap to this file so that we can use heap characteristics and I ran into some complications with the peekMin() function because if the return type is a Card,there are compile errors if I try to return null when the heap is empty. 
+
+-IH
+
+Wednesday, June 11th 2014
+
+I was previously having trouble how trying to implement heapsort on the hand class because of the return type of removeMin() and peekMin() functions in ALHeap.java. I didn't want it to return a null value as the card if the it ran out of cards to sort, so I ended up just saying to continue to sort if there were still elements in the heap. I also needed to create a simple getMin() function which would access the Card at the root of a min heap. Now we have it so that it is correctly sorted. I think my next step is to make it so that it will display the hand as a collection of cards on the screen. 
+-IH
+
+Today we discussed all tasks we've already completed & defined the tasks we will have to focus on in the days to come.
+Our main point of discussion involved our approach to the GUI. We decided that we'll stick with allowing the user to select cards all at once
++ then send them all to the Driver for processing. 
+-MR
