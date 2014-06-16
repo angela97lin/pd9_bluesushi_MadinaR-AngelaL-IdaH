@@ -27,10 +27,20 @@ After the challenge is resolved, the play continues in a normal fashion. He/She 
 
 To Play:
 =======
-Compile all java files and run (java) the Run.java file.
+Simply download, unpackage, and enter the following into your terminal:
+
+$ cd path/to/unpackaged/folder
+$ javac *.java ; java run the Run.java file
+Make sure you have Java installed.
+
 Unfortunately, the game is a little slow and sometimes buggy.
+
 Contributors:
 ===========
 Angela Lin
 Madina Radjabova
 Ida Huang
+
+Contact
+=======
+madina9696@gmail.com, angela97lin@gmail.com, ihuangda@gmail.com
