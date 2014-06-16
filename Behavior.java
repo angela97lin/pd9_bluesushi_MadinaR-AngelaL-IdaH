@@ -57,22 +57,8 @@ public class Behavior {
      } */
     
     public static void setStr() {
-        response = adjective[trickery];
+        response = "The computer placed down the card " + adjective[trickery]+".";
     }
-    
-    /* method callBS will determine whether the computer will call BS or not
-     * hasCard refers to whether the player placed the correct card or not
-     * gullibility is the computer's attribute
-     */
-    public boolean callBS(int gullibility, boolean hasCard) {
-        return false;
-    }
-    
-    //For testing purposes:
-    public static void main(String[] args) {
-        Behavior b = new Behavior(20);
-        b.setStr();
-        System.out.println(b.getStr());
-    }
+  
     
 }

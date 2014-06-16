@@ -1,44 +1,34 @@
-/*****************************************************
- * class Hand  --- hold each individual's hand in game
- * Implements ArrayList as back-end structure
- * Implements heapsort for sorting
- *****************************************************/
+/*
+  This class will hold each individual's hand. 
+  Will use ArrayList as back-end structure.
+ */
+
 import java.util.*;
 import java.io.*;
 
-public class Hand {
-    
-    //--------------  INSTANCE VARIABLES  --------------
-    private ArrayList<Card> hand = new ArrayList<Card>();
+public class Hand{
+
+    private ArrayList<Card> hand;// = new ArrayList<Card>();
     private ALHeap heap = new ALHeap();
     
-    //--------------  CONSTRUCTOR  --------------
+    public Hand(){
+	hand = new ArrayList<Card>();
+	heap = new ALHeap();
+    }
+
     public Hand(ArrayList<Card> h) {
-        hand = h;
+	hand = h;
+      
     }
     
-    //--------------v  METHODS  v--------------
-    
-    /*****************************************************
-     * ArrayList<Card> showHand()
-     * displays card in this hand
-     *****************************************************/
     public ArrayList<Card> showHand() {
         return hand;
     }
-
-    /*****************************************************
-     * int size()
-     * returns size of this hand
-     *****************************************************/
     public int size(){
         return hand.size();
     }
    
-    /*****************************************************
-     * boolean hadCard (Card)
-     * @param x --  checks for a card with the same suit and int value in hand
-     *****************************************************/
+    //Will check for a card with the same suit and int value in hand
     public boolean hasCard(Card x) {
         for(Card current : hand) {
             if (current.isSame(x))
@@ -47,106 +37,86 @@ public class Hand {
         return false;
     }
 
-    /*****************************************************
-     * int hasCard (int)
-     * @param x -- checks if a card with any suit is present in the hand that 
-     *             has an int value of x
-     * returns a number from 0 - 4
-     * 0 if no such card is present, and 4 if the player has 
-     * all cards with int value of x
-     *****************************************************/
-    public int hasCard(int x) {
-        int count = 0;
+    
+    //Will check if a card with any suit is present in the hand that has
+    //an int value of x
+    public boolean hasCard(int x) {
         for(Card current : hand) {
             if (current.getIntVal() == x)
-                count++;
+                return true;
         }
-        return count;
+        return false;
     }
-
     
-    /*****************************************************
-     * Card remove(Card)
-     * @param c -- removes the card at the index of occurence of Card object c
-     *              and returns that card. (The return is for testing purposes)
-     *****************************************************/
+    //Will remove the card at the index of occurence of Card object c
+    //and will return that card. (The return is for testing purposes)
     public Card remove(Card c) {
         hand.remove(hand.indexOf(c));
+	//Play.cs.add(c);
         return c;
     }
+    //removes first value
+    public Card remove(){
+	return hand.remove(0);
+    }
 
-
-    /*****************************************************
-     * Card remove(int)
-     * @param x -- removes the card at the index x and returns that card. 
-     *             (The return is for testing purposes)
-     *****************************************************/
     public Card remove(int x) {
-        int pos = 0;
         Card retCard = null;
-        for(Card c: hand) {
-            if (hand.get(pos).getIntVal() == x) {
-                retCard = hand.get(pos);
-                hand.remove(pos);
+        for (int i = 0; i<hand.size(); i++) {
+            if (hand.get(i).getIntVal() == x) {
+                retCard = hand.get(i);
+                hand.remove(i);
                 break;
-            } else
-                pos++;
+            }
         }
+	/*if (retCard != null){
+	    Play.cs.add(retCard);
+	    }*/
+        return retCard;
+    }
+    
+    public Card get(int x){
+	Card retCard = null;
+        for (int i = 0; i<hand.size(); i++) {
+            if (hand.get(i).getIntVal() == x) {
+                retCard = hand.get(i);
+            }
+	}
         return retCard;
     }
 
-    /*****************************************************
-     * void add(Card)
-     * @param c -- add Card c to hand and sorts the hand
-     *****************************************************/    
     public void add(Card c){
 	hand.add(c);
-	heap.add(c);
     }
 
-    /*****************************************************
-     * void add(Card)
-     * @param c -- add Card c to hand and sorts the hand
-     *****************************************************/
-    public ArrayList<Card> sort() {
-
+    public void sort() {
 	//return ArrayList<Card> of sorted heap
 	int len = hand.size();
 	ArrayList<Card> sorted = new ArrayList<Card>();
+	for (int i = 0; i < len; i++){
+	    heap.add(getCard(i));
+	}
 	for (int i = 0; i < len; i++){
 	    if (heap.isEmpty() != true){
 		sorted.add(heap.getMin());
 		heap.removeMin();
 	    }
 	}
-
-	return sorted;
+	
+	hand = sorted;
     }
 
-    public String toString(){
+    public Card getCard(int pos){
+	return hand.get(pos);
+    }
+
+    
+
+   public String toString(){
 	String retS = "(";
 	for (int i = 0; i<hand.size(); i++){
 	    retS = retS + " " + hand.get(i).toString()+"\n";
 	}
 	return retS;
-    }
-
-    public static void main (String[] args){
-
-	ArrayList<Card> pile = new ArrayList<Card>();
-	Hand h = new Hand(pile);
-	h.add(new Card(2, "Clover"));
-	h.add(new Card(10, "Hearts"));
-	h.add(new Card(13, "Diamond"));
-	h.add(new Card(9, "Clover"));
-	h.add(new Card(1, "Hearts"));
-	h.add(new Card(5, "Spade"));
-	h.add(new Card(2, "Spade"));
-        h.add(new Card(10, "Spade"));
-	h.add(new Card(7, "Diamond"));
-	h.add(new Card(11, "Spade"));
-
-	ArrayList<Card> sorted = h.sort();
-	System.out.println(sorted);
     }
 }

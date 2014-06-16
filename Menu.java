@@ -13,7 +13,7 @@ public class Menu extends Rectangle{
 	g.fillRect(350,425,400,100);
 	g.setColor(new Color(255,255,255));
 	g.setFont(new Font("Courier New", Font.BOLD,64));
-	g.drawString("New Game",405,290);
+	g.drawString("Play",475,290);
 	g.drawString("Settings",400,490);
 	
     }

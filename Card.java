@@ -12,7 +12,7 @@ import java.awt.image.*;
  * loading of the image of card with value and suit from an external file
  *****************************************************/
 
-public class Card extends Component{
+public class Card extends Component implements Comparable<Card> {
     
     //INSTANCE VARIABLES
     private int intValue; //contains numerical value of card (J = 11, Q = 12, A = 1, 2 = 2, etc.)
@@ -22,6 +22,7 @@ public class Card extends Component{
     private boolean faceup;
     private int mx,my,px,py;
     private boolean select;
+    private boolean go;
 
     //CONSTRUCTOR - sets the intValue and suit
     public Card(int x, String s) {
@@ -58,6 +59,7 @@ public class Card extends Component{
 	mx = px;
 	my = py;
 	select = false;
+	go= false;
     }
 
     //public accessor to intValue
@@ -110,7 +112,15 @@ public class Card extends Component{
     public void changeFace(){
 	faceup = !faceup;
     }
+    
+    public void falseFace(){
+	faceup = false;
+    }
 
+    public void trueFace(){
+	faceup = true;
+    }
+    
     public Dimension getPreferredSize() {
         if (img == null) {
              return new Dimension(50,100);
@@ -123,13 +133,25 @@ public class Card extends Component{
 	px = val;
     }
 
+    public boolean getGo(){
+	return go;
+    }
+
+    public void resetGo(){
+	go = false;
+    }
+
     public void setYCor(int val){
 	py = val;
     }
 
-    public void reveal(int num){
-	changeFace();
-	setXCor((GamePlay.myWidth/2+37)+num*74);
+    public void reveal(Graphics g,int num,int check){
+	trueFace();
+	setXCor((GamePlay.myWidth/2+37)+num*75);
+	draw(g);
+	if(check == getIntVal()){
+	    go = true;
+	}
     }
 
     public int getXCor(){
@@ -139,62 +161,24 @@ public class Card extends Component{
     public int getYCor(){
 	return py;
     }
-    //pops up card when selected by changing xcor/ycor
-    public void move(){
-    }
-    
-    /*
-     If the current card is less than the other, will return -1
-     If the current card is greater than the other, will return 1
-     
-     Looks at intValue first, then at suit.
-     Suit values (smallest --> largest): diamond, clover, heart, spade
-    */
-    public int compareTo(Card other) {
-        if(intValue < other.getIntVal())
-            return -1;
-        else if(intValue > other.getIntVal())
-            return 1;
-        else {
-            if(suit.equalsIgnoreCase(other.getSuit())) //If they are equal
-                return 0;
-            else if(suit.equalsIgnoreCase("Spade")) //Spade is highest
-                return 1;
-            else if(suit.equalsIgnoreCase("Diamond")) //Diamond is lowest
-                return -1;
-            else if(suit.equalsIgnoreCase("Clover") && (other.getSuit().equalsIgnoreCase("Heart") || other.getSuit().equalsIgnoreCase("Spade")))
-                return -1;
-            else if(suit.equalsIgnoreCase("Clover") && other.getSuit().equalsIgnoreCase("Diamond"))
-                return 1;
-            else if (suit.equalsIgnoreCase("Heart") && (other.getSuit().equalsIgnoreCase("Clover") || other.getSuit().equalsIgnoreCase("Diamond")))
-                return 1;
-            else
-                return -1;
-            
-        }
-    }
+  
 
     public boolean isBetween(float objeX, float objeY) {
 	if ((px<= objeX && px+70>=objeX)) {
-	    if ((py<= objeY && py+100 >=objeY)){
+	    if ((py+25<= objeY && py+125 >=objeY)){
 		return true;
 	    }
 	}return false;
     }
-    public static void main(String[] args){
-	JFrame f = new JFrame( "Load Card Sample");
-	
-	Card c = new Card(2, "clover");
-	
-	f.addWindowListener(new WindowAdapter(){
-                public void windowClosing(WindowEvent e) {
-                    System.exit(0);
-                }
-            });
 
-	f.add(c);
-	f.pack();
-	f.setVisible(true);
+    public int compareTo(Card other){
+	if (this.getIntVal() > other.getIntVal())
+	    return 1;
+	else if (this.getIntVal() == other.getIntVal())
+	    return 0;
+	else
+	    return -1;
     }
 
+  
 } //end Card class
