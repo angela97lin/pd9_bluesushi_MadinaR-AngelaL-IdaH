@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class Run{
     
-    public static String title = "BlueStuff";
+    public static String title = "BlueSushi: BS";
     public static Dimension size = new Dimension(1000,700);
     public static JFrame driver;
     
