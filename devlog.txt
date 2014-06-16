@@ -188,3 +188,13 @@ and slow, it is also important to figure out exaclty WHY or what is causing the 
 take out the Music addition we wanted before in order to make the game faster.
 (GUI is painful.)
 -AL
+Finished creating the game! Since it is quite late at night, I will be brief. 
+Misc. items such as adding an image for the user and creating different level experiences and readding the music in (finally!) were completed. More importantly
+however, the entire game concept was completed! This means that the checks for BSing were created, the checks for placing down
+a certain number of cards was checked, and our Strings for the Computer's moves were implemented. I had a difficult
+time trying to implement the BS-returning the cards (cardCollect) because I was receiving doubles of various cards. This
+turned out to be because the Computer had popped two cards off. GUI took absolutely forever and I still believe that
+the game is rather laggy...
+Conceptually, I was able to use Ida's ALHeap and sorting algorithm and Madina's Behavior/BehaviorQueue in order to 
+draw the cards in a sorted order and write a String representing the Computer's emotions. Success! Woo-hoo!
+-AL
