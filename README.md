@@ -22,3 +22,12 @@ Any player who suspects that the card(s) placed down by another player do not ma
 
 After the challenge is resolved, the play continues in a normal fashion. He/She who clears his hand first by ridding himself of all the cards wins the game.
 
+To Play:
+=======
+Compile and run the Run.java file.
+
+Contributors:
+===========
+Angela Lin
+Madina Radjabova
+Ida Huang
