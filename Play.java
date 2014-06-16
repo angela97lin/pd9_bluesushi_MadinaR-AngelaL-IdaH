@@ -111,7 +111,7 @@ public class Play{
 	g.drawString("Go!",225,356);
 	g.drawString("BS!",225,406);
 	g.drawString("Unselect",200,306);
-	g.drawString("Next Card:" + cs.expectedVal,300,356);
+	
 	if(turn){
 	    g.drawString("Placed:" + csPlaced,300,406);
 	    //System.out.println(c.emotion);
@@ -132,7 +132,8 @@ public class Play{
 	    }
 	    
 	    
-	}
+	}	
+	g.drawString("Next Card:" + cs.expectedVal,300,356);
 	if(count != 0){
 	    bs(g);
 	    if(turn){
