@@ -142,6 +142,37 @@ public class Card extends Component{
     //pops up card when selected by changing xcor/ycor
     public void move(){
     }
+    
+    /*
+     If the current card is less than the other, will return -1
+     If the current card is greater than the other, will return 1
+     
+     Looks at intValue first, then at suit.
+     Suit values (smallest --> largest): diamond, clover, heart, spade
+    */
+    public int compareTo(Card other) {
+        if(intValue < other.getIntVal())
+            return -1;
+        else if(intValue > other.getIntVal())
+            return 1;
+        else {
+            if(suit.equalsIgnoreCase(other.getSuit())) //If they are equal
+                return 0;
+            else if(suit.equalsIgnoreCase("Spade")) //Spade is highest
+                return 1;
+            else if(suit.equalsIgnoreCase("Diamond")) //Diamond is lowest
+                return -1;
+            else if(suit.equalsIgnoreCase("Clover") && (other.getSuit().equalsIgnoreCase("Heart") || other.getSuit().equalsIgnoreCase("Spade")))
+                return -1;
+            else if(suit.equalsIgnoreCase("Clover") && other.getSuit().equalsIgnoreCase("Diamond"))
+                return 1;
+            else if (suit.equalsIgnoreCase("Heart") && (other.getSuit().equalsIgnoreCase("Clover") || other.getSuit().equalsIgnoreCase("Diamond")))
+                return 1;
+            else
+                return -1;
+            
+        }
+    }
 
     public boolean isBetween(float objeX, float objeY) {
 	if ((px<= objeX && px+70>=objeX)) {
