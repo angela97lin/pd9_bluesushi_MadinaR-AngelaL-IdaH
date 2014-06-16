@@ -37,9 +37,8 @@ Unfortunately, the game is a little slow and sometimes buggy.
 
 Contributors:
 ===========
-Angela Lin
-Madina Radjabova
-Ida Huang
+Angela Lin, Madina Radjabova, Ida Huang
+Stuyvesant High School, New York City
 
 Contact
 =======
