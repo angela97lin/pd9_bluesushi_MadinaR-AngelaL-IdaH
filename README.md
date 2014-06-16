@@ -8,12 +8,15 @@ a standard deck of cards.
 
 How to Play:
 ===========
-After all cards are dealt out to the players (because 52 is not divisible by all numbers 2-10 evenly, some players
-may have more cards than others) the person with the Ace of spades may place their card down first. The players then
-take turns placing down cards in an ascending order. The first player must discard an Ace, the second a 2, the third player must discard a 3, etc. A 10 is followed by a Jack, Queen, then King, and afterwards, the cycle reverts back to
-Ace. All cards discarded are placed into a center pile, face down.
+Our version of BS (which we dub, BlueSushi) is a little different from the original game. Because there are only two players (the computer and the human player), we only use half a deck at a time, in order to avoid the ridiculous case of the player knowing exactly what the computer has--the other half of the full deck. The player always goes first, and is told to put down a 1, which stands for A. The player and computer then take turns placing cards in ascending order. A 10 is followed by a Jack, Queen, then King, and afterwards, the cycle reverts back to Ace. All cards discarded are placed into a center pile, face down.
 
-A player may place down any card, even if it does not match what the player should be putting down.
+*Things to Know:
+A = 1
+J = 11
+Q = 12
+K = 13
+
+A player may place down any card, even if it does not match what the player should be putting down. A player may also place down more than four cards, but as a deck never has more than four cards of the same number, the player is then susceptible to being called BS on.
 
 Any player who suspects that the card(s) placed down by another player do not match the rank called can call "BS" or
 "Bullshit" and challenge the validity of the play. At this point, the cards that have been placed down are overturned and the play is tested.
@@ -24,8 +27,8 @@ After the challenge is resolved, the play continues in a normal fashion. He/She 
 
 To Play:
 =======
-Compile and run the Run.java file.
-
+Compile all java files and run (java) the Run.java file.
+Unfortunately, the game is a little slow and sometimes buggy.
 Contributors:
 ===========
 Angela Lin
