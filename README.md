@@ -29,8 +29,11 @@ To Play:
 =======
 Simply download, unpackage, and enter the following into your terminal:
 
+
+```
 $ cd path/to/unpackaged/folder
-$ javac *.java ; java run the Run.java file
+$ javac *.java ; java run Run.java
+```
 Make sure you have Java installed.
 
 Unfortunately, the game is a little slow and sometimes buggy.
@@ -38,6 +41,7 @@ Unfortunately, the game is a little slow and sometimes buggy.
 Contributors:
 ===========
 Angela Lin, Madina Radjabova, Ida Huang
+
 Stuyvesant High School, New York City
 
 Contact
